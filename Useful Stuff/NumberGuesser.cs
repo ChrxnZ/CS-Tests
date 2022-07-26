@@ -8,7 +8,7 @@ namespace NumberGuesser // reason im making this cus it has variable assignments
         {
             Random random = new Random();
 
-            bool PlayAgain = true;
+            bool PlayAgain = true; // assignments 
             int min = 1;
             int max = 10;
             int Guess;
@@ -16,30 +16,30 @@ namespace NumberGuesser // reason im making this cus it has variable assignments
             int Guesses;
             string Response = "";
 
-            while (PlayAgain)
+            while (PlayAgain) // "While PlayAgain = true;"
             {
-                Guess = 0;
+                Guess = 0;    // define a int value for these variables
                 Guesses = 0;
-                Response = "";
-                Number = random.Next(min, max + 1);
+                Response = ""; // define a empty string for if when the player wants to go again or exit the code
+                Number = random.Next(min, max + 1); // generate a random number between 1-10
 
-                while (Guess != Number)
+                while (Guess != Number) // "while guess is not equal number"
                 {
                     Console.WriteLine("Guess A Number Between " + min + " - " + max + " : ");
                     Guess = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Guess: " + Guess);
 
-                    if (Guess > Number)
+                    if (Guess > Number) // "if guess is bigger than number"
                     {
                         Console.WriteLine(Guess + " Is Too High");
                     }
-                    else if (Guess < Number)
+                    else if (Guess < Number) // "Else If Guess Is Lower Than number"
                     {
                         Console.WriteLine(Guess + " Is Too Low");
                     }
-                    Guesses++;
+                    Guesses++; // add 1 number to variable guesses for every wrong guess
 
-                }
+                } // if you win:
                 Console.WriteLine("Number: " + Number);
                 Console.WriteLine("Congrats");
                 Console.WriteLine("Guesses: " + Guesses);
@@ -47,15 +47,15 @@ namespace NumberGuesser // reason im making this cus it has variable assignments
                 Response = Console.ReadLine();
                 Response = Response.ToUpper();
 
-                if (Response == "Y")
+                if (Response == "Y") // if response = y (yes)
                 {
-                    PlayAgain = true;
+                    PlayAgain = true; // set playagain to true
                 }
                 else
                 {
-                    PlayAgain = false;
+                    PlayAgain = false; // set playagain to false
                 }
-            }
+            } // if playagain is false:
             Console.WriteLine("ok fuck off and enjoy this garbage code");
                 Console.ReadKey();
         }
